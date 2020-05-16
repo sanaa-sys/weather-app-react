@@ -9,8 +9,6 @@ function App() {
   const [query, setQuery] = useState('');
   const [units, setUnit] = useState('');
   const [weather, setWeather] = useState({});
-  //const [toggle, setToggle] = useState(false);
-  //console.log(toggle)
   const search = evt => {
     if (evt.key === "Enter") {
       fetch(`${api.base}weather?q=${query}&units=${units}&APPID=${api.key}`)
@@ -22,11 +20,6 @@ function App() {
         });
     }
   }
-  // const toggler = () => (
-  //   toggle ? setToggle(false):setToggle(true)
-  // )
-
-
 
   const dateBuilder = (d) => {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -56,8 +49,6 @@ function App() {
         <div className="help-box">
           <p>Please enter the city in the search box in this format: City, Country Code</p>
         </div>
-        // <Switch checkedChildren="°C" unCheckedChildren="°F" onClick={toggler}/>
-        // {toggle ? setUnit("imperial") : setUnit("metric")}
 
         {(typeof weather.main != "undefined") ? (
         <div>
